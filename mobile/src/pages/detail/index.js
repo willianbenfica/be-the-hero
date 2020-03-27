@@ -6,6 +6,7 @@ import * as MailComposer from 'expo-mail-composer';
 
 
 import { Feather } from '@expo/vector-icons';
+import { FontAwesome } from '@expo/vector-icons';
 import styles from './styles';
 
 import logoImg from '../../assets/logo.png';
@@ -36,29 +37,40 @@ export default function Detail() {
   return (
     <View style={styles.container}>
       <View style={styles.header}>
-            <Image source={logoImg} />
+            
               <TouchableOpacity 
                 style={styles.detailsButton}
                 onPress={navigateBack}
               >
                 <Feather name="arrow-left" size={28} color="#E02041" />
               </TouchableOpacity>
+              <Image source={logoImg} />
       </View>
 
       <View style={styles.incident}>
-        <Text style={[styles.incidentProperty, {marginTop: 0}]}>ONG:</Text>
-  <Text style={styles.incidentValue}>{incident.name} de {incident.city}/{incident.uf}</Text>
+        
+                  <View style={styles.incidentViewHeader}>
+                        <Text style={styles.incidentViewTitle}><FontAwesome name="institution" size={15} color="#FFF" style={{marginRight: 5}} /> {incident.name}</Text>
+                        <Text style={styles.incidentViewCity}>{incident.city} - {incident.uf}</Text>
+                    </View>
 
-        <Text style={styles.incidentProperty}>CASO:</Text>
-        <Text style={styles.incidentValue}>{incident.title}</Text>
+                    <View style={styles.incidentView}>
+                        <Text style={styles.incidentProperty}>CASO:</Text>
+                        <Text style={styles.incidentValue}>{incident.title}</Text>
 
-        <Text style={styles.incidentProperty}>VALOR:</Text>
-        <Text style={styles.incidentValue}>
-          {Intl.NumberFormat('pt-BR', {
-            style: 'currency', 
-            currency: 'BRL'
-          }).format(incident.value)}
-        </Text>
+                        <View style={styles.lineHr} />
+
+                        <View style={{flexDirection: 'row', alignItems: 'center'}}>
+                            <FontAwesome name="dollar" size={15} color="#41414d" style={{marginRight: 5}} />
+                            <Text style={styles.incidentProperty}>VALOR:</Text>
+                            <Text style={[styles.incidentValue]}>
+                                {Intl.NumberFormat('pt-BR', {
+                                style: 'currency', 
+                                currency: 'BRL'
+                            }).format(incident.value)}
+                            </Text>
+                        </View>
+                    </View>
       </View>
 
       <View style={styles.contactBox}>
@@ -71,13 +83,13 @@ export default function Detail() {
               style={styles.action}
               onPress={sendWhatsapp}
             >
-              <Text style={styles.actionText}>WhatsApp</Text>
+              <Text style={styles.actionText}><FontAwesome name="whatsapp" size={15} color="#FFF" /> WhatsApp</Text>
             </TouchableOpacity>
             <TouchableOpacity 
               style={styles.action}
               onPress={sendMail}
             >
-              <Text style={styles.actionText}>E-mail</Text>
+              <Text style={styles.actionText}><FontAwesome name="envelope-o" size={15} color="#FFF" /> E-mail</Text>
             </TouchableOpacity>
           </View>
         </View>

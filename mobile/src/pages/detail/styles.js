@@ -15,24 +15,46 @@ export default StyleSheet.create({
     },
 
     incident: {
-        padding: 24,
         borderRadius: 8,
         backgroundColor: '#FFF',
         marginBottom: 16,
         marginTop: 48,
     },
 
+    incidentView: {
+        padding: 24,
+        paddingTop: 0,
+    },
+
+    incidentViewHeader: {
+        backgroundColor: '#E02041',
+        padding: 12,
+        borderRadius: 6,
+        marginBottom: 24,
+    },
+
+    incidentViewTitle: {
+        color: '#FFF',
+        fontWeight: 'bold',
+        fontSize: 20,
+    },
+
+    incidentViewCity: {
+        color: '#DDD',
+        fontSize: 14,
+        marginTop: 10,
+    },
+
     incidentProperty: {
         fontSize: 14,
         color: '#41414d',
         fontWeight: 'bold',
-        marginTop: 24,
     },
     
     incidentValue: {
-        marginTop: 8,
         fontSize: 15,
         color: '#737380',
+
     },
 
     contactBox: {
@@ -75,6 +97,12 @@ export default StyleSheet.create({
         color: '#FFF',
         fontSize: 15,
         fontWeight: 'bold',
+    },
+    lineHr: {
+        borderBottomColor: '#DDD',
+        borderBottomWidth: 1,
+        marginVertical: 24,
+
     }
 
 

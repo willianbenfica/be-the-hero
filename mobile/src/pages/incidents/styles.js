@@ -41,10 +41,25 @@ export default StyleSheet.create({
     },
 
     incident: {
-        padding: 24,
         borderRadius: 8,
         backgroundColor: '#FFF',
         marginBottom: 16,
+    },
+
+    incidentView: {
+        padding: 24,
+    },
+
+    incidentViewHeader: {
+        backgroundColor: '#E02041',
+        padding: 12,
+        borderRadius: 6,
+    },
+
+    incidentViewTitle: {
+        color: '#FFF',
+        fontWeight: 'bold',
+        fontSize: 16,
     },
 
     incidentProperty: {
@@ -70,6 +85,12 @@ export default StyleSheet.create({
         color: '#E02041',
         fontSize: 15,
         fontWeight: 'bold',
+    },
+
+    lineHr: {
+        borderBottomColor: '#DDD',
+        borderBottomWidth: 1,
+        marginBottom: 15,
     }
 
 
